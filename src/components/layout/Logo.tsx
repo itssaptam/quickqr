@@ -1,0 +1,39 @@
+import Link from "next/link";
+
+export function LogoMark({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 32 32"
+      className={className}
+      fill="none"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <rect width="32" height="32" rx="8" fill="var(--brand-solid)" />
+      <g fill="#fff">
+        <path fillRule="evenodd" d="M6 6h8v8H6V6Zm2 2v4h4V8H8Z" />
+        <path fillRule="evenodd" d="M18 6h8v8h-8V6Zm2 2v4h4V8h-4Z" />
+        <path fillRule="evenodd" d="M6 18h8v8H6v-8Zm2 2v4h4v-4H8Z" />
+        <rect x="18" y="18" width="3" height="3" rx=".5" />
+        <rect x="23" y="18" width="3" height="3" rx=".5" />
+        <rect x="18" y="23" width="3" height="3" rx=".5" />
+        <rect x="23" y="23" width="3" height="3" rx=".5" />
+      </g>
+    </svg>
+  );
+}
+
+export function Logo() {
+  return (
+    <Link
+      href="/"
+      className="inline-flex items-center gap-2.5 rounded-md font-semibold tracking-tight"
+      aria-label="QuickQR home"
+    >
+      <LogoMark className="h-8 w-8" />
+      <span className="text-lg">
+        Quick<span className="text-brand-text">QR</span>
+      </span>
+    </Link>
+  );
+}
